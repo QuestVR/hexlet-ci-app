@@ -14,9 +14,11 @@ jobs:
       - run: make setup
       - run: make test
   lint:
-    needs: setup
+    needs: [setup, test]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - run: make setup
       - run: make lint
+      - name: Print Hello from Hexlet
+        uses: hexlet-components/hello-from-hexlet-action@release
