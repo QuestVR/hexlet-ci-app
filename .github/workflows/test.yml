@@ -12,7 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: make setup
-      - run: make start
       - run: make test
   lint:
     needs: setup
@@ -20,5 +19,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: make setup
-      - run: make start
       - run: make lint
